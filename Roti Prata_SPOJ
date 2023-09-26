@@ -2,26 +2,25 @@
 using namespace std;
 bool solve(int p,int cook[],int n,int mid){
 
-    int cnt = 0;
-    for(int i=0;i<n;i++){
-        //for each cook count the pratas
-        int c = 0;
-        int time = mid;
-        int perpratas = cook[i]; //first paratha is cooked at cook[i] mins
-        while(time > 0){         //projected time
-            time = time - perpratas;
-            if( time >= 0){
-                c += 1;
-                perpratas  += cook[i];
-            }
-        }
-        cnt += c;
-        if(cnt >= p)
-            return true;
-    }
-    return false;
+int time = 0;
+int temp_paratha = 0;
+
+  for(int i = 0;i<n;i++){
+  time = cook[i]
+   int j = 2;
+  while(time<=mid)
+{
+temp_paratha++;
+time = time + (arr[i] *j);
+j++;
 }
 
+if(temp_paratha >= p)
+{
+return 1;
+}
+else return 0;
+}
 int minTime(int p,int cook[],int n){
     int s = 0, e = 10000007;
     int mid,ans=-1;
