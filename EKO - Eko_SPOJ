@@ -1,0 +1,42 @@
+#include <iostream>
+typedf ll long long
+using namespace std;
+ll isans(ll mid,vector<ll>&arr,ll k){
+    ll n = arr.size();
+    ll temp = 0;
+    for(ll i=0;i<n;i++){
+        if(arr[i] > mid)
+           temp += (arr[i] - mid);
+    }
+    if(temp >= k)return 1;
+    else return 0;
+}
+int main() {
+	// your code goes here
+	ll n,k;
+cin>>n >>k;
+ vl arr(n);
+ ll maxi = -1;
+ for(ll i=0;i<n;i++){
+     cin>>arr[i];
+     maxi = max(maxi,arr[i]);
+ }
+ 
+ ll low = 0;
+ ll high = maxi;
+ 
+ ll ans = 0;
+ 
+ while(low<=high){
+     ll mid = low + ( high-low)/2;
+     if(isans(mid,arr,k)){
+         ans = mid;
+         low = mid + 1;
+     }
+     else{
+         high = mid - 1;
+     }
+ }
+ cout<<ans<<endl;
+	return 0;
+}
