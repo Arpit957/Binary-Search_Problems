@@ -12,6 +12,7 @@ class Solution
                 painted+=arr[i];
             }
             else{
+// increase the painters
                 given++;
                 if(given > k or arr[i]>ans)return false;
                 
