@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+         vector<int> ans;
+        int start = 0;
+        int end = nums.size()-1;
+        int startpos = -1;
+        int endpos = -1;
+        
+        if(nums.size()==0)return {-1,-1};
+        
+        while(start<=end){
+            
+            if(nums[start]==target){
+                if(startpos==-1)
+                    startpos = start;
+            }
+            if(nums[end]==target){
+                if(endpos==-1)
+                    endpos = end;
+            }
+            
+            if(startpos != -1 && endpos !=-1)return {startpos,endpos};
+            
+            if(startpos == -1)start++;
+            if(endpos == -1)end--;      
+        }
+    
+        return {-1,-1};
+    }
+};
