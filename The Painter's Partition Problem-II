@@ -15,7 +15,7 @@ class Solution
 // increase the painters
                 given++;
                 if(given > k or arr[i]>ans)return false;
-                
+                //start with new painter
                 painted = 0;
                 painted = arr[i];
             }
